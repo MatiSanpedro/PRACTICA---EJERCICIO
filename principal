@@ -57,7 +57,8 @@ def Menu_de_opciones(): #configure esto para que funcione con 5 y verificar erro
                 promedios = iniciar_matriz(5,3,0)
                 legajos = iniciar_matriz(5,3,0)
                 vector_extra = crear_lista(3)
-
+                print("--Matrices listas.")
+                
             case "2":  #cargar nombres 
                 nombres = cargar_matriz_secuencialmente_nombres(nombres)
                 for i in range(len(nombres)):
@@ -66,26 +67,32 @@ def Menu_de_opciones(): #configure esto para que funcione con 5 y verificar erro
 
 
             case "3":  #cargar notas, 3 notas x 5 conjuntos 
-                notas = cargar_matriz_secuencialmente_numeros(notas)
-                print(notas) 
+                notas = cargar_matriz_secuencialmente_notas(notas,nombres)
+                for l in range(len(notas)):
+                        print(f"notas ingresadas de {nombres[l]}: {notas[l]} ")
                 
 
             case "4": #calcular promedios 
-                promedios = funcion_promedio_en_listas(notas)
-                print(promedios)
+                promedios = funcion_promedio_en_listas(notas,nombres)
+                for t in range(len(promedios)):   
+                    print(f"promedio de {nombres[t]}: {promedios[t]}")
 
             case "5":  #buscar el mayor o mas cercano 
                 while True:
                     opciones_2 = input("|-------seleccione una opcion-------|\n 1-Buscar el promedio mayor \n 2 Buscar el promedio mayor mas cercano al numero ingresado \n3 Volver ")
                     match opciones_2:
-                        case "1":
-                            ubicar_mayor(promedios)
-                        case "2":
+                        case "1": # mostrar el promedio mayor 
+                            promedio_maximo = maximo_de_numeros(promedios)
+                            print(promedio_maximo)
+
+                        case "2":  #mostrar el promedio ingresando un numero, y los promedios mayores a este
                             numero = float((input("ingrese un numero ")))
                             mayor_o_igual_float_listas(promedios,numero)
-                        case "3":
+
+                        case "3": #volver al menu principal
                             break
-                            
+                        case _:
+                            print("invalido, ingrese una opcion valida ")
 
             case "6":  #salir  
                 print("Saliendo del programa ")
@@ -95,7 +102,11 @@ def Menu_de_opciones(): #configure esto para que funcione con 5 y verificar erro
             case "7":
                 iniciar = Menu_de_opciones()
                 print(iniciar)
+            
+            case _:
+                print("OPCION NO VALIDA, seleccione una opcion correcta en la lista \n")
 
+            
 
 
 
