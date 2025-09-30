@@ -144,15 +144,18 @@ def recojer_lugar(lista:list,i:int,j:int):
 
 #trabaja con listas de float
 #busca los numeros mayores o iguales al ingresado 
-def mayor_o_igual_float_listas(lista:list,valor):
+def mayor_o_igual_float_listas(lista:list,valor,lista_nombres:list):
+
     for i in range(len(lista)):
         if lista[i] > valor:
-            print(f"se encontro  {lista[i]} en lugar {i} ")
+            print(f"Promedio : {lista[i]} alumno : {lista_nombres[i]} ")
 
         if lista[i] == valor:
-            print(f"Se encontró el promedio {valor} en posición {i}")
+            print(f"Promedio :  {valor} alumno : {lista_nombres[i]}")
+
     
-    
+
+
 
 #esto trabaja con matrices (lista de listas) 
 def buscar_mayor_o_igual_flotante_matrices(lista:list,valor):
