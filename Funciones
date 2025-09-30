@@ -13,7 +13,7 @@ def iniciar_matriz(cantidad_filas,cantidad_columnas,valor_inicial)->list:
 
 
 
-matrix = iniciar_matriz(2,4,0)
+
 
         
 
@@ -37,8 +37,6 @@ def cargar_matriz_secuencialmente_notas(matriz:list,lista_2):
 
     
     return matriz 
-
-
 
 
 
@@ -73,7 +71,7 @@ def cargo_notas_en(lista):
     for i in range(3):
         while True:
             notas = input("ingrese 3 notas  ")    
-                                    #lugar 0       caracter1       lugar1     caracter 0 (solo me interesa el 10)
+        
             if len(notas) == 2 and ord(notas[0])== ord("1") and ord(notas[1])== ord("0"): 
                 lista_suplente[i] = int(notas)  
     
@@ -131,17 +129,6 @@ def buscar_valor_flotante(matriz:list,valor:float):
                 print(f"Se encontro el numero en fila {i} columna {j}! ")
 
 
-
-
-#recojer indices 
-def recojer_lugar(lista:list,i:int,j:int):
-    lista[i][j]
-
-
-    return lista[i][j]
-
-
-
 #trabaja con listas de float
 #busca los numeros mayores o iguales al ingresado 
 def mayor_o_igual_float_listas(lista:list,valor,lista_nombres:list):
@@ -186,11 +173,6 @@ def ubicar_mayor(lista:list):
     return ingreso 
 
 
-
-'''liste = [[1.9],[2.0],[5.666],[8,7]]
-eso = ubicar_mayor(liste[0])
-print(eso)
-'''
 #promedios
 #en lista simple
 def funcion_promedio(listo:list):
@@ -200,9 +182,6 @@ def funcion_promedio(listo:list):
         promedio = suma / len(listo)
         
     return promedio
-
-
-
 
 
 
@@ -284,8 +263,8 @@ def retornar_indice_elemento(lista: list, dato_a_buscar: int) -> int :
     
     return indice_elemento
 
-#buscar mayor SWAP  con 3
 
+#buscar mayor SWAP  con 3
 def maximo_numeros_3 (numero_1:int,numero_2:int,numero_3:int) -> int:
     numero_mayor = 0
     #verifico que quede 1 si los 3 son iguales 
@@ -310,8 +289,6 @@ def maximo_numeros_3 (numero_1:int,numero_2:int,numero_3:int) -> int:
     elif numero_2 == numero_3 and numero_2 > numero_1:
         numero_mayor = numero_2
     return numero_mayor 
-
-
 
 
 
