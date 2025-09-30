@@ -29,6 +29,18 @@ def cargar_matriz_secuencialmente_texto(matriz:list):
         
     return matriz 
 
+def cargar_matriz_secuencialmente_notas(matriz:list,lista_2):
+    #agregar las validaciones que sean necesarias
+    for i in range(len(matriz)):
+        for j in range(len(matriz[i])):
+            matriz[i][j] = int(input(f"ingresar nota para {lista_2[i]} lugar {j}: "))
+
+    
+    return matriz 
+
+
+
+
 
 #numeros
 def cargar_matriz_secuencialmente_numeros(matriz:list):
@@ -192,7 +204,7 @@ def funcion_promedio(listo:list):
 
 
 #en matrices 
-def funcion_promedio_en_listas(listo:list):
+def funcion_promedio_en_listas(listo:list,lista_nombres:list):
     indice = 0  #voy a usar esto para mover el lugar donde se insertan los promedios 
     devolucion = [0.0] * len(listo)  #lista de flotantes 
     for i in listo:   
@@ -200,7 +212,7 @@ def funcion_promedio_en_listas(listo:list):
         suma += i
         promedio = (suma[0] + suma[1] + suma[2]) / len(suma) 
         
-        print(f"la lista de notas es :{suma}.  promedio es: {promedio}")
+        print(f"la lista de notas es :{suma}.  promedio : {promedio}")
         
 
         devolucion[indice] += promedio
@@ -268,3 +280,46 @@ def retornar_indice_elemento(lista: list, dato_a_buscar: int) -> int :
             break # cortar ejecucion debido a que se encontro
     
     return indice_elemento
+
+#buscar mayor SWAP  con 3
+
+def maximo_numeros_3 (numero_1:int,numero_2:int,numero_3:int) -> int:
+    numero_mayor = 0
+    #verifico que quede 1 si los 3 son iguales 
+    if numero_1 == numero_2 and numero_1 == numero_3:
+        numero_mayor = numero_1
+        #ahora los comparo para averiguar cual es mayor
+    elif numero_1 > numero_2 and numero_1 > numero_3:
+        numero_mayor = numero_1
+    elif numero_2 > numero_1 and numero_2 > numero_3:
+        numero_mayor = numero_2 
+    elif numero_3 > numero_1 and numero_3 > numero_2:
+        numero_mayor = numero_3
+        # si hay dos iguales y uno mayor 
+    elif numero_1 == numero_2 and numero_1 > numero_3:
+        numero_mayor = numero_1
+    elif numero_2 == numero_1 and numero_2 > numero_3:
+        numero_mayor = numero_2 
+    elif numero_3 == numero_2 and numero_3 > numero_2:
+        numero_mayor = numero_3
+    elif numero_3 == numero_1 and numero_3 > numero_2:
+        numero_mayor = numero_3
+    elif numero_2 == numero_3 and numero_2 > numero_1:
+        numero_mayor = numero_2
+    return numero_mayor 
+
+
+
+
+
+#BUSCAR MAYOR CON CUALQUIER CANTIDAD 
+def maximo_de_numeros(numeros:float):
+    numero_mayor = numeros[0]   
+    
+    for numero in numeros: 
+        if numero > numero_mayor:
+            numero_mayor = numero
+
+    return numero_mayor
+
+
